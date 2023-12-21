@@ -1,0 +1,31 @@
+<h1>Welcome to Home</h1>
+<a href="{% url 'Author_Form' %}">Author_Form</a>
+<a href="{% url 'Book_Form' %}">Book_Form</a>
+<a href="{% url 'Aggrigation' %}">Aggrigation</a>
+
+<hr><hr>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Publication_Year</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+    {% for i in project %}
+        <td>{{i.Title}}</td>
+        <td>{{i.Author}}</td>
+        <td>{{i.ISBN}}</td>
+        <td>{{i.Publication_Year}}</td>
+        <td>{{i.Price}}</td>
+        <td><a href=" {% url 'Single_Post' i.id %} ">View</a></td>
+        <td><a href=" {% url 'Update_Post' i.id %} ">Update</a></td>
+        <td><a href=" {% url 'delete_Post' i.id %} ">Delete</a></td>
+    
+    </tr>
+    {% endfor %}
+</table>

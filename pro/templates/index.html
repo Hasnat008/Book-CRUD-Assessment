@@ -1,0 +1,89 @@
+{% include 'navbar.html' %}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Section 1: Book Library</h2>
+
+            <!-- Book List -->
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">ISBN </th>
+                        <th scope="col">Publish Year</th>
+                        <th scope="col">Price</th>
+                        
+                        <th scope="col">Actions</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example book -->
+                    <tr>
+                        {% for i in project %}
+                        <td>{{i.Title}}</td>
+                        <td>{{i.Author}}</td>
+                        <td>{{i.ISBN}}</td>
+                        <td>{{i.Publication_Year}}</td>
+                        <td>{{i.Price}}</td>
+                        <td><a href=" {% url 'Single_Post' i.id %} ">View</a></td>
+                        <td><a href=" {% url 'Update_Post' i.id %} ">Update</a></td>
+                        <td><a href=" {% url 'delete' i.id %} ">Delete</a></td>
+                        <br>
+                    
+                    </tr>
+                    {% endfor %}
+                    <!-- Add more books as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Author Display -->
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Section 2: Author Display</h2>
+
+            <!-- Table to Display Author Data -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Data (Replace with dynamic data) -->
+                    <tr>
+                        {% for i in Author %}
+                        <td>{{i.First_Name}}</td>
+                        <td>{{i.Last_Name}}</td>
+                        <td>{{i.Address}}</td>
+                        <td>
+                            <a href="{% url 'Single_Author' i.id %}"><button type="button" class="btn btn-info">View
+                            </button></a>
+                            <a href="{% url 'Update_Author' i.id%}"><button type="button" class="btn btn-primary">Update Author</button></a>
+                            <a href="{% url 'delete_Author' i.id %}"><button type="button" class="btn btn-danger">Delete Author</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <!-- Add more rows for additional data -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

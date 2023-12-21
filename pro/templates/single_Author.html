@@ -1,0 +1,10 @@
+{% include 'navbar.html' %}
+
+<div class="container post-container">
+    <h1 class="text-center">First Name: {{object.First_Name}}</h1>
+    <p class="text-center">Last Name: {{object.Last_Name}}</p>
+    <p class="text-center">Address: {{object.Address}}</p>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'index' %}"><button class="btn btn-primary">Back to Library</button></a>
+    </div>

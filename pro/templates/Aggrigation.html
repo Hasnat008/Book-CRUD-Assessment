@@ -1,0 +1,25 @@
+{% include 'navbar.html' %}
+
+
+<div class="container mt-5">
+    <h2>Welcome to Aggrigation File</h2>
+    
+    <!-- Example Post -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Total Books : {{total_books}}</h5>
+            <p class="card-text">Average Price : ${{avg_price}}</p>
+            <p class="card-text">Oldest Book : {{oldest_book_year}}</p>
+            <p class="card-text">Newest Book : {{newest_book_year}}</p>
+            {% for i in bookoneachyear %}
+            <strong>Year:</strong> {{ i.Publication_Year }}
+            <strong>Count:</strong> {{ i.count }} <br> {% endfor %}
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'index' %}"><button class="btn btn-primary">Back to Library</button></a>
+    </div>
+    <!-- Add more posts as needed -->
+
+</div>
+

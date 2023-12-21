@@ -1,0 +1,8 @@
+{% include 'navbar.html' %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{Author.as_p}}
+    <input type="submit" value="Confirm">
+</form>

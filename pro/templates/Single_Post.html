@@ -1,0 +1,12 @@
+{% include 'navbar.html' %}
+
+<div class="container post-container">
+    <h1 class="text-center">Title: {{object.Title}}</h1>
+    <p class="text-center">Author: {{object.Author}}</p>
+    <p class="text-center">Price: {{object.Price}}</p>
+    <p class="text-center">ISBN: {{object.ISBN}}</p>
+    <p class="text-center">Publish Year: {{object.Publication_Year}}</p>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'index' %}"><button class="btn btn-primary">Back to Library</button></a>
+    </div>
